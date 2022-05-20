@@ -1,0 +1,14 @@
+{
+  "$schema": "",
+  "author": "Aplulu",
+  "description": "Draw Saber on Virtual Motion Capture",
+  "gameVersion": "1.21.0",
+  "id": "VMCSaberBS",
+  "name": "VMCSaberBS",
+  "version": "0.1.0",
+  "dependsOn": {
+    "BSIPA": "^4.2.0",
+    "BeatSaberMarkupLanguage": "^1.5.5",
+    "SiraUtil": "^3.0.0"
+  }
+}

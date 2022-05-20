@@ -1,0 +1,112 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework>
+        <AssemblyVersion>0.1.0.0</AssemblyVersion>
+        <PackageVersion>0.1.0.0</PackageVersion>
+        <InformationalVersion>0.1.0</InformationalVersion>
+        <Authors>Aplulu</Authors>
+        <Copyright>Copyright (c) 2022 Aplulu</Copyright>
+        <RepositoryUrl>https://github.com/aplulu/VMCSaberBS</RepositoryUrl>
+        <RootNamespace>VMCSaberBS</RootNamespace>
+        <LangVersion>9</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="BeatmapCore">
+          <HintPath>$(BeatSaberPath)\Beat Saber_Data\Managed\BeatmapCore.dll</HintPath>
+        </Reference>
+        <Reference Include="BSML">
+            <HintPath>$(BeatSaberPath)\Plugins\BSML.dll</HintPath>
+        </Reference>
+        <Reference Include="Colors">
+          <HintPath>$(BeatSaberPath)\Beat Saber_Data\Managed\Colors.dll</HintPath>
+        </Reference>
+        <Reference Include="CustomSaber">
+          <HintPath>Refs\CustomSaber.dll</HintPath>
+        </Reference>
+        <Reference Include="GameplayCore">
+          <HintPath>$(BeatSaberPath)\Beat Saber_Data\Managed\GameplayCore.dll</HintPath>
+        </Reference>
+        <Reference Include="Hive.Versioning">
+            <HintPath>$(BeatSaberPath)\Libs\Hive.Versioning.dll</HintPath>
+        </Reference>
+        <Reference Include="HMLib, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <HintPath>$(BeatSaberPath)\Beat Saber_Data\Managed\HMLib.dll</HintPath>
+        </Reference>
+        <Reference Include="HMUI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <HintPath>$(BeatSaberPath)\Beat Saber_Data\Managed\HMUI.dll</HintPath>
+        </Reference>
+        <Reference Include="IPA.Loader, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <HintPath>$(BeatSaberPath)\Beat Saber_Data\Managed\IPA.Loader.dll</HintPath>
+        </Reference>
+        <Reference Include="Main, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <HintPath>$(BeatSaberPath)\Beat Saber_Data\Managed\Main.dll</HintPath>
+        </Reference>
+        <Reference Include="Newtonsoft.Json">
+            <HintPath>$(BeatSaberPath)\Libs\Newtonsoft.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="SaberFactory">
+          <HintPath>Refs\SaberFactory.dll</HintPath>
+        </Reference>
+        <Reference Include="SaberTailor">
+          <HintPath>Refs\SaberTailor.dll</HintPath>
+        </Reference>
+        <Reference Include="SiraUtil">
+            <HintPath>$(BeatSaberPath)\Plugins\SiraUtil.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Net" />
+        <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <HintPath>$(BeatSaberPath)\Beat Saber_Data\Managed\UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <HintPath>$(BeatSaberPath)\Beat Saber_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="Zenject">
+            <HintPath>$(BeatSaberPath)\Beat Saber_Data\Managed\Zenject.dll</HintPath>
+        </Reference>
+        <Reference Include="Zenject-usage">
+            <HintPath>$(BeatSaberPath)\Beat Saber_Data\Managed\Zenject-usage.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Content Include="VMCSaber-BS.csproj.user" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <EmbeddedResource Include="manifest.json" />
+      <EmbeddedResource Include="UI\Views\GameSettings.bsml" />
+      <EmbeddedResource Include="UI\Views\Settings.bsml" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Include="..\OscJack\Packages\jp.keijiro.osc-jack\Runtime\Base\Internal\OscDataTypes.cs">
+            <Link>OscJack\Internal\OscDataTypes.cs</Link>
+        </Compile>
+        <Compile Include="..\OscJack\Packages\jp.keijiro.osc-jack\Runtime\Base\Internal\OscPacketEncoder.cs">
+            <Link>OscJack\Internal\OscPacketEncoder.cs</Link>
+        </Compile>
+        <Compile Include="..\OscJack\Packages\jp.keijiro.osc-jack\Runtime\Base\Internal\OscPacketParser.cs">
+            <Link>OscJack\Internal\OscPacketParser.cs</Link>
+        </Compile>
+        <Compile Include="..\OscJack\Packages\jp.keijiro.osc-jack\Runtime\Base\OscClient.cs">
+            <Link>OscJack\OscClient.cs</Link>
+        </Compile>
+        <Compile Include="..\OscJack\Packages\jp.keijiro.osc-jack\Runtime\Base\OscDataHandle.cs">
+            <Link>OscJack\OscDataHandle.cs</Link>
+        </Compile>
+        <Compile Include="..\OscJack\Packages\jp.keijiro.osc-jack\Runtime\Base\OscMaster.cs">
+            <Link>OscJack\OscMaster.cs</Link>
+        </Compile>
+        <Compile Include="..\OscJack\Packages\jp.keijiro.osc-jack\Runtime\Base\OscMessageDispatcher.cs">
+            <Link>OscJack\OscMessageDispatcher.cs</Link>
+        </Compile>
+        <Compile Include="..\OscJack\Packages\jp.keijiro.osc-jack\Runtime\Base\OscServer.cs">
+            <Link>OscJack\OscServer.cs</Link>
+        </Compile>
+    </ItemGroup>
+    
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Command="copy &quot;$(TargetPath)&quot; &quot;$(BeatSaberPath)\Plugins&quot;" />
+    </Target>
+</Project>

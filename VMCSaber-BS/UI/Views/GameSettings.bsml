@@ -1,0 +1,10 @@
+<bg
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://monkeymanboy.github.io/BSML-Docs/ https://raw.githubusercontent.com/monkeymanboy/BSML-Docs/gh-pages/BSMLSchema.xsd"
+>
+    <vertical child-control-height="false" spacing="2" pad-top="2">
+        <increment-setting text="Saber Scale" font-size="3" min="0.1" max="2.0" apply-on-change="true" integer-only="false" increment=".1" value="scale" get-event="set" pref-width="60" />
+        
+        <toggle-setting text="Controller Rotation" font-size="3" value="enable_controller_rot" />
+    </vertical>
+</bg>

@@ -1,0 +1,8 @@
+<bg
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://monkeymanboy.github.io/BSML-Docs/ https://raw.githubusercontent.com/monkeymanboy/BSML-Docs/gh-pages/BSMLSchema.xsd"
+>
+    <vertical child-control-height="false" spacing="2" pad-top="2">
+        <string-setting text="Send Port:" value="send_port" apply-on-change="true" />
+    </vertical>
+</bg>

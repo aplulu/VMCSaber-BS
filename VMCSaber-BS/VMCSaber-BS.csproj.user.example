@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <BeatSaberPath>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber</BeatSaberPath>
+  </PropertyGroup>
+</Project>
