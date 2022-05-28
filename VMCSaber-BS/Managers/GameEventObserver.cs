@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Linq;
 using SiraUtil.Logging;
+using SiraUtil.Sabers;
 using UnityEngine;
 using VMCSaberBS.Util;
 using Zenject;
@@ -13,13 +13,15 @@ namespace VMCSaberBS.Managers
         private readonly PluginConfig _pluginConfig;
         private readonly SaberEventEmitter _emitter;
         private readonly ColorManager _colorManager;
+        private readonly SaberModelManager _saberModelManager;
 
-        public GameEventObserver(SiraLog log, SaberEventEmitter emitter, ColorManager colorManager, PluginConfig pluginConfig)
+        public GameEventObserver(SiraLog log, SaberEventEmitter emitter, ColorManager colorManager, PluginConfig pluginConfig, SaberModelManager saberModelManager)
         {
             _log = log;
             _emitter = emitter;
             _colorManager = colorManager;
             _pluginConfig = pluginConfig;
+            _saberModelManager = saberModelManager;
         }
 
         public void Initialize()
@@ -45,11 +47,19 @@ namespace VMCSaberBS.Managers
             var rightRot = SaberUtil.GetRightControllerRot();
             _emitter.SendControllerRot(SaberType.SaberB, rightRot);
             _log.Info($"Controller Rot: Left={leftRot}, Right={rightRot}");
+
+            _saberModelManager.ColorUpdated += OnColorUpdated;
+        }
+
+        private void OnColorUpdated(Saber saber, Color color)
+        {
+            _emitter.SendSaberColor(saber.saberType, color);
         }
 
         public void Dispose()
         {
             _emitter.SendSaberState(false);
+            _saberModelManager.ColorUpdated -= OnColorUpdated;
         }
     }
 }
