@@ -47,6 +47,13 @@ namespace VMCSaberBS.Managers
             var rightRot = SaberUtil.GetRightControllerRot();
             _emitter.SendControllerRot(SaberType.SaberB, rightRot);
             _log.Info($"Controller Rot: Left={leftRot}, Right={rightRot}");
+            
+            // Send Controller Position
+            var leftPos = SaberUtil.GetLeftControllerPos();
+            _emitter.SendControllerPos(SaberType.SaberA, leftPos);
+            var rightPos = SaberUtil.GetRightControllerPos();
+            _emitter.SendControllerPos(SaberType.SaberB, rightPos);
+            _log.Info($"Controller Pos: Left={leftPos}, Right={rightPos}");
 
             _saberModelManager.ColorUpdated += OnColorUpdated;
         }

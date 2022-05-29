@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>net48</TargetFramework>
-        <AssemblyVersion>0.1.0.0</AssemblyVersion>
-        <PackageVersion>0.1.0.0</PackageVersion>
-        <InformationalVersion>0.1.0</InformationalVersion>
+        <AssemblyVersion>0.2.0.0</AssemblyVersion>
+        <PackageVersion>0.2.0.0</PackageVersion>
+        <InformationalVersion>0.2.0</InformationalVersion>
         <Authors>Aplulu</Authors>
         <Copyright>Copyright (c) 2022 Aplulu</Copyright>
         <RepositoryUrl>https://github.com/aplulu/VMCSaberBS</RepositoryUrl>
