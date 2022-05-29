@@ -10,11 +10,10 @@ using SiraUtil.Zenject;
 
 namespace VMCSaberBS
 {
-    [Plugin(RuntimeOptions.DynamicInit)]
+    [Plugin(RuntimeOptions.DynamicInit), NoEnableDisable]
     public class Plugin
     {
         public static string Name => "VMCSaber-BS";
-        public static IPALogger Logger { get; internal set; }
 
         [Init]
         public Plugin(IPA.Logging.Logger logger, IPA.Config.Config config, Zenjector injector, PluginMetadata metadata)

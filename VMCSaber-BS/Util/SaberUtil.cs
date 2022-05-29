@@ -58,5 +58,23 @@ namespace VMCSaberBS.Util
             }
             return Vector3.zero;
         }
+        
+        public static Vector3 GetLeftControllerPos()
+        {
+            if (PluginManager.GetPlugin("SaberTailor") != null && PluginConfig.Instance.EnableControllerPos)
+            {
+                return SaberTailorUtil.GetLeftControllerPos();
+            }
+            return Vector3.zero;
+        }
+        
+        public static Vector3 GetRightControllerPos()
+        {
+            if (PluginManager.GetPlugin("SaberTailor") != null && PluginConfig.Instance.EnableControllerPos)
+            {
+                return SaberTailorUtil.GetRightControllerPos();
+            }
+            return Vector3.zero;
+        }
     }
 }

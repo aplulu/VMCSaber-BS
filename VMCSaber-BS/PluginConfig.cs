@@ -8,6 +8,8 @@
 
         public bool EnableControllerRot { get; set; } = true;
 
+        public bool EnableControllerPos { get; set; } = false;
+
         public int SendPort { get; set; } = 39540;
     }
 }

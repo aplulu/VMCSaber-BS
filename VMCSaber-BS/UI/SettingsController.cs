@@ -1,9 +1,6 @@
-﻿using System.Reflection;
-using BeatSaberMarkupLanguage.Attributes;
-using BeatSaberMarkupLanguage.GameplaySetup;
+﻿using BeatSaberMarkupLanguage.Attributes;
 using BeatSaberMarkupLanguage.Settings;
 using BeatSaberMarkupLanguage.ViewControllers;
-using UnityEngine;
 using VMCSaberBS.Managers;
 using Zenject;
 
@@ -14,10 +11,10 @@ namespace VMCSaberBS.UI
     public class SettingsController: BSMLAutomaticViewController, IInitializable
     {
         [Inject]
-        private readonly PluginConfig _pluginConfig = null;
+        private PluginConfig _pluginConfig = null;
 
         [Inject]
-        private readonly SaberEventEmitter _emitter = null;
+        private SaberEventEmitter _emitter = null;
         
         public void Initialize()
         {

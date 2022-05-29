@@ -53,5 +53,9 @@ namespace VMCSaberBS.Managers
             _client.Send($"/VMCSaber/Controller/Rot/{(saberType == SaberType.SaberA ? "Left" : "Right")}", rot.x, rot.y, rot.z);
         }
 
+        public void SendControllerPos(SaberType saberType, Vector3 pos)
+        {
+            _client.Send($"/VMCSaber/Controller/Pos/{(saberType == SaberType.SaberA ? "Left" : "Right")}", pos.x, pos.y, pos.z);
+        }
     }
 }

@@ -13,5 +13,15 @@ namespace VMCSaberBS.Util.Saber
         {
             return SaberTailor.Settings.Configuration.Grip.RotRight;
         }
+        
+        public static Vector3 GetLeftControllerPos()
+        {
+            return SaberTailor.Settings.Configuration.Grip.PosLeft;
+        }
+        
+        public static Vector3 GetRightControllerPos()
+        {
+            return SaberTailor.Settings.Configuration.Grip.PosRight;
+        }
     }
 }
